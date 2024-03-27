@@ -26,18 +26,18 @@ def calculate_psnr_ssim(clear_img_names, recon_img_names):
         ssim_list.append(ssim)
 
         i += 1
-    with open('results.txt', 'a') as f:
+    with open('indoor_results.txt', 'a') as f:
         print("Mean PSNR: ", sum(psnr_list) / len(psnr_list), "\nMean SSIM: ", sum(ssim_list) / len(ssim_list), file=f)
 
 
-clear_img_path = 'sots/outdoor/clear'
+clear_img_path = 'sots/indoor/clear'
 clear_img_list = []
-clear_img_list.extend(sorted(glob.glob(os.path.join(clear_img_path, "*.png"))))
+clear_img_list.extend(sorted(glob.glob(os.path.join(clear_img_path, "*"))))
 
 # print(clear_img_list)
-recon_img_path = 'sots_outdoor'
+recon_img_path = 'sots_indoor'
 recon_img_list = []
-recon_img_list.extend(sorted(glob.glob(os.path.join(recon_img_path, "*.jpg"))))
+recon_img_list.extend(sorted(glob.glob(os.path.join(recon_img_path, "*"))))
 
 # print(recon_img_list)
 

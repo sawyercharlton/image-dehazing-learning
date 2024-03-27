@@ -6,11 +6,11 @@ from skimage import io
 import numpy as np
 
 # Read images
-in_dir = 'sots/outdoor/hazy'
+in_dir = 'photos'
 img_list = []
-img_list.extend(glob.glob(os.path.join(in_dir, "*.jpg")))
+img_list.extend(glob.glob(os.path.join(in_dir, "*")))
 print(len(img_list))
-output_dir = 'sots_outdoor/'
+output_dir = 'sots_photos/'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
